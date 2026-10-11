@@ -4,7 +4,7 @@ Tags: image optimization, webp, avif, images, performance
 Requires at least: 5.5
 Requires PHP: 8.0
 Tested up to: 7.1
-Stable tag: 5.1.27
+Stable tag: 5.1.28
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,6 +57,10 @@ Yes. The plugin uses the `kashida-image-optimizer` text domain and standard Word
 Kashida Image Optimizer does not send images or personal data to an external service. Image optimization is performed locally on the WordPress server.
 
 == Changelog ==
+
+= 5.1.28 =
+* Improved Media Library AJAX error handling to show a safe message instead of exposing raw PHP exception details.
+* Added a clearer coding-standards report in the repository's CI workflow.
 
 = 5.1.27 =
 * Fixed Media Library Re-optimize and Delete optimized actions by defining their JavaScript translation strings on the Media Library screen.
