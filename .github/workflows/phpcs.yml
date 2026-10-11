@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   phpcs:
@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -38,6 +40,20 @@ jobs:
             --standard=WordPress \
             --extensions=php \
             kashida-image-optimizer/ || true
+
+      - name: Commit supported formatting fixes to pull request branch
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- kashida-image-optimizer/kashida-image-optimizer.php; then
+            git add kashida-image-optimizer/kashida-image-optimizer.php
+            git commit -m "Apply automatic WordPress coding style fixes"
+            git push origin "HEAD:${HEAD_REF}"
+          fi
 
       - name: Upload PHPCBF-formatted source for review
         if: always()
