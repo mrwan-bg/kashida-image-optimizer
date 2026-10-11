@@ -1,0 +1,49 @@
+
+name: WordPress Coding Standards
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  phpcs:
+    name: Check WordPress Coding Standards
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          tools: composer
+          coverage: none
+
+      - name: Install PHP_CodeSniffer and WordPress standards
+        run: |
+          composer global require --no-interaction \
+            squizlabs/php_codesniffer:^3 \
+            wp-coding-standards/wpcs:^3
+
+      - name: Configure WordPress standards
+        run: |
+          "$(composer global config bin-dir --absolute)/phpcs" \
+            --config-set installed_paths \
+            "$(composer global config home --absolute)/vendor/wp-coding-standards/wpcs"
+
+      - name: Run PHPCS
+        run: |
+          "$(composer global config bin-dir --absolute)/phpcs" \
+            --standard=WordPress \
+            --extensions=php \
+            kashida-image-optimizer/
