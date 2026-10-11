@@ -873,7 +873,7 @@ add_action( 'wp_ajax_kashimop_media_optimize', function () {
         kashimop_media_action_response( $id, __( 'Image optimized successfully.', 'kashida-image-optimizer' ) );
     } catch ( Throwable $e ) {
         kashimop_log_error( "Media optimize failed for attachment {$id}: " . $e->getMessage() );
-        wp_send_json_error( array( 'message' => $e->getMessage() ) );
+        wp_send_json_error( array( 'message' => __( 'The operation failed. Check the WordPress debug log for details.', 'kashida-image-optimizer' ) ) );
     }
 } );
 
@@ -888,7 +888,7 @@ add_action( 'wp_ajax_kashimop_media_reoptimize', function () {
         kashimop_media_action_response( $id, __( 'Image re-optimized successfully.', 'kashida-image-optimizer' ) );
     } catch ( Throwable $e ) {
         kashimop_log_error( "Media re-optimize failed for attachment {$id}: " . $e->getMessage() );
-        wp_send_json_error( array( 'message' => $e->getMessage() ) );
+        wp_send_json_error( array( 'message' => __( 'The operation failed. Check the WordPress debug log for details.', 'kashida-image-optimizer' ) ) );
     }
 } );
 
