@@ -26,8 +26,12 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
-          tools: composer
           coverage: none
+
+      - name: Allow WordPress standards installer
+        run: |
+          composer global config \
+            allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
 
       - name: Install PHP_CodeSniffer and WordPress standards
         run: |
