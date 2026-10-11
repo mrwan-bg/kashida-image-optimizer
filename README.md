@@ -1,6 +1,16 @@
 # Kashida Image Optimizer
 
-**Smaller images, faster websites, better performance.**
+<p align="center">
+  <img src="kashida-image-optimizer/assets/banner-772x250.png" alt="Kashida Image Optimizer Banner" width="100%">
+</p>
+
+<p align="center">
+  <img src="kashida-image-optimizer/assets/icon-256x256.png" alt="Kashida Image Optimizer Icon" width="150">
+</p>
+
+<p align="center">
+  <strong>Smaller images, faster websites, better performance.</strong>
+</p>
 
 Kashida Image Optimizer is a lightweight WordPress image optimization plugin that automatically creates optimized **WebP and AVIF** versions of your images while keeping the original files untouched.
 
@@ -23,6 +33,32 @@ Optimize new uploads automatically or process your existing Media Library with b
 - Lightweight, local server-side image processing
 - Translation-ready with `.po` and `.mo` files
 - Multilingual plugin compatibility, including Polylang
+
+## Screenshots
+
+### 1. Plugin Overview
+
+![Kashida Image Optimizer - Plugin Overview](kashida-image-optimizer/assets/screenshot-1.png)
+
+### 2. Smart PNG Handling
+
+![Kashida Image Optimizer - Smart PNG Handling](kashida-image-optimizer/assets/screenshot-2.png)
+
+### 3. Image Optimization
+
+![Kashida Image Optimizer - Image Optimization](kashida-image-optimizer/assets/screenshot-3.png)
+
+### 4. Quality Controls
+
+![Kashida Image Optimizer - Quality Controls](kashida-image-optimizer/assets/screenshot-4.png)
+
+### 5. Media Library Integration
+
+![Kashida Image Optimizer - Media Library Integration](kashida-image-optimizer/assets/screenshot-5.png)
+
+### 6. Additional Features
+
+![Kashida Image Optimizer - Additional Features](kashida-image-optimizer/assets/screenshot-6.png)
 
 ## Installation
 
@@ -98,4 +134,6 @@ For bug reports, feature requests, and technical discussions, use the [GitHub Is
 
 ---
 
-**Kashida Image Optimizer — smaller images, faster websites, better performance.**
+<p align="center">
+  <strong>Kashida Image Optimizer — smaller images, faster websites, better performance.</strong>
+</p>
