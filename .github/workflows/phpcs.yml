@@ -32,7 +32,14 @@ jobs:
           composer global config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
           composer global require --no-interaction --with-all-dependencies squizlabs/php_codesniffer:^3.10 wp-coding-standards/wpcs:^3.1
 
-      - name: Report WordPress Coding Standards violations
+      - name: Auto-fix supported WordPress Coding Standards issues
+        run: |
+          ~/.composer/vendor/bin/phpcbf \
+            --standard=WordPress \
+            --extensions=php \
+            kashida-image-optimizer/ || true
+
+      - name: Verify WordPress Coding Standards
         run: |
           ~/.composer/vendor/bin/phpcs \
             --standard=WordPress \
