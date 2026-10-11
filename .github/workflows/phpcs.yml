@@ -32,7 +32,7 @@ jobs:
           composer global config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
           composer global require --no-interaction --with-all-dependencies squizlabs/php_codesniffer:^3.10 wp-coding-standards/wpcs:^3.1
 
-      - name: Run WordPress Coding Standards
+      - name: Report WordPress Coding Standards violations
         run: |
           ~/.composer/vendor/bin/phpcs \
             --standard=WordPress \
