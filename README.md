@@ -58,7 +58,7 @@ For the latest recommended WordPress environment requirements, see the [official
 | Property | Details |
 |---|---|
 | Plugin Name | Kashida Image Optimizer |
-| Version | 5.1.23 |
+| Version | 5.1.27 |
 | Requires WordPress | 5.5 or later |
 | Tested up to | WordPress 7.1 |
 | Requires PHP | 8.0 or later |
