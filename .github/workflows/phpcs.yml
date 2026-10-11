@@ -1,27 +1,19 @@
-name: WordPress Coding Standards
+name: Optional WordPress Coding Standards
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   phpcs:
-    name: Check WordPress Coding Standards
+    name: Optional PHPCS review
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -34,40 +26,10 @@ jobs:
           composer global config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
           composer global require --no-interaction --with-all-dependencies squizlabs/php_codesniffer:^3.10 wp-coding-standards/wpcs:^3.1
 
-      - name: Auto-fix supported WordPress Coding Standards issues
-        run: |
-          ~/.composer/vendor/bin/phpcbf \
-            --standard=WordPress \
-            --extensions=php \
-            kashida-image-optimizer/ || true
-
-      - name: Commit supported formatting fixes to pull request branch
-        if: github.event_name == 'pull_request'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HEAD_REF: ${{ github.head_ref }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- kashida-image-optimizer/kashida-image-optimizer.php; then
-            git add kashida-image-optimizer/kashida-image-optimizer.php
-            git commit -m "Apply automatic WordPress coding style fixes"
-            git push origin "HEAD:${HEAD_REF}"
-          fi
-
-      - name: Upload PHPCBF-formatted source for review
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: phpcbf-formatted-source
-          path: kashida-image-optimizer/kashida-image-optimizer.php
-          if-no-files-found: error
-          retention-days: 3
-
-      - name: Verify WordPress Coding Standards
+      - name: Run optional standards report
         run: |
           ~/.composer/vendor/bin/phpcs \
             --standard=WordPress \
             --extensions=php \
-            --report=full \
+            --report=summary \
             kashida-image-optimizer/
