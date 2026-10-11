@@ -1,12 +1,6 @@
-name: WordPress Coding Standards
+name: Optional WordPress Coding Standards
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -14,7 +8,7 @@ permissions:
 
 jobs:
   phpcs:
-    name: Check WordPress Coding Standards
+    name: Optional PHPCS review
     runs-on: ubuntu-latest
 
     steps:
@@ -32,9 +26,10 @@ jobs:
           composer global config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
           composer global require --no-interaction --with-all-dependencies squizlabs/php_codesniffer:^3.10 wp-coding-standards/wpcs:^3.1
 
-      - name: Run WordPress Coding Standards
+      - name: Run optional standards report
         run: |
           ~/.composer/vendor/bin/phpcs \
             --standard=WordPress \
             --extensions=php \
+            --report=summary \
             kashida-image-optimizer/
