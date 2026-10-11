@@ -26,28 +26,21 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
+          tools: composer
           coverage: none
 
-      - name: Allow WordPress standards installer
+      - name: Create temporary PHPCS environment
         run: |
-          composer global config \
-            allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+          mkdir phpcs-check
+          cd phpcs-check
+          composer init --no-interaction --name=kashida/phpcs-check
+          composer require --no-interaction --with-all-dependencies \
+            squizlabs/php_codesniffer:^3.10 \
+            wp-coding-standards/wpcs:^3.1
 
-      - name: Install PHP_CodeSniffer and WordPress standards
+      - name: Run WordPress Coding Standards
         run: |
-          composer global require --no-interaction \
-            squizlabs/php_codesniffer:^3 \
-            wp-coding-standards/wpcs:^3
-
-      - name: Configure WordPress standards
-        run: |
-          "$(composer global config bin-dir --absolute)/phpcs" \
-            --config-set installed_paths \
-            "$(composer global config home --absolute)/vendor/wp-coding-standards/wpcs"
-
-      - name: Run PHPCS
-        run: |
-          "$(composer global config bin-dir --absolute)/phpcs" \
+          ./phpcs-check/vendor/bin/phpcs \
             --standard=WordPress \
             --extensions=php \
             kashida-image-optimizer/
