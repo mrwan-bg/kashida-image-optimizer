@@ -1,4 +1,4 @@
-
+\
 name: WordPress Coding Standards
 
 on:
@@ -26,14 +26,19 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
-          tools: composer
           coverage: none
 
       - name: Create temporary PHPCS environment
+        shell: bash
         run: |
+          set -euo pipefail
           mkdir phpcs-check
           cd phpcs-check
+
           composer init --no-interaction --name=kashida/phpcs-check
+
+          composer config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+
           composer require --no-interaction --with-all-dependencies \
             squizlabs/php_codesniffer:^3.10 \
             wp-coding-standards/wpcs:^3.1
