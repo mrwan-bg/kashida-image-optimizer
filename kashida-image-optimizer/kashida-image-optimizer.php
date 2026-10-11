@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Kashida Image Optimizer
  * Description:       Convert WordPress images to WebP and AVIF while preserving originals, with automatic conversion, batch processing, statistics, and cleanup.
- * Version:           5.1.27
+ * Version:           5.1.28
  * Author:             Kashida Media Services
  * Author URI:         https://kashida.ly
  * License:           GPL-2.0-or-later
@@ -33,6 +33,7 @@ add_filter( 'wp_check_filetype_and_ext', function ( $data, $file, $filename, $mi
     return $data;
 }, 10, 4 );
 
+define( 'KASHIMOP_VERSION', '5.1.28' );
 define( 'KASHIMOP_OPTION', 'kashimop_settings' );
 define( 'KASHIMOP_BATCH_SIZE', 1 ); // Process one attachment per AJAX request for reliable conversion and progress on large images.
 define( 'KASHIMOP_BATCH_CACHE_KEY', 'kashimop_batch_ids_cache' );
@@ -907,7 +908,7 @@ add_action( 'wp_ajax_kashimop_media_delete', function () {
         ) );
     } catch ( Throwable $e ) {
         kashimop_log_error( "Media delete optimized failed for attachment {$id}: " . $e->getMessage() );
-        wp_send_json_error( array( 'message' => $e->getMessage() ) );
+        wp_send_json_error( array( 'message' => __( 'The operation failed. Check the WordPress debug log for details.', 'kashida-image-optimizer' ) ) );
     }
 } );
 
