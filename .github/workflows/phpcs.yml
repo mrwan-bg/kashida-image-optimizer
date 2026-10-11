@@ -39,10 +39,19 @@ jobs:
             --extensions=php \
             kashida-image-optimizer/ || true
 
+      - name: Upload PHPCBF-formatted source for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phpcbf-formatted-source
+          path: kashida-image-optimizer/kashida-image-optimizer.php
+          if-no-files-found: error
+          retention-days: 3
+
       - name: Verify WordPress Coding Standards
         run: |
           ~/.composer/vendor/bin/phpcs \
             --standard=WordPress \
             --extensions=php \
-            --report=summary \
+            --report=full \
             kashida-image-optimizer/
