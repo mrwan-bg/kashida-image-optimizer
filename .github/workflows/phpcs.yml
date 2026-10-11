@@ -37,4 +37,5 @@ jobs:
           ~/.composer/vendor/bin/phpcs \
             --standard=WordPress \
             --extensions=php \
+            --report=summary \
             kashida-image-optimizer/
