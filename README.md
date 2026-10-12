@@ -26,8 +26,8 @@ Kashida Image Optimizer is a lightweight WordPress image optimization plugin tha
 Optimize new uploads automatically or process your existing Media Library with batch conversion, re-optimization, and cleanup tools. Fine-tune WebP and AVIF quality settings, use Smart PNG Handling and Smart Content Detection, and choose the best optimized format for faster image delivery.
 
 <p align="center">
-  <a href="https://github.com/mrwan-bg/kashida-image-optimizer/raw/refs/heads/main/release-downloads/kashida-image-optimizer-v5.1.35.zip">
-    <strong>Download Plugin v5.1.35</strong>
+  <a href="https://github.com/mrwan-bg/kashida-image-optimizer/releases">
+    <strong>Download Plugin</strong>
   </a>
   &nbsp; • &nbsp;
   <a href="https://github.com/mrwan-bg/kashida-image-optimizer/issues">
@@ -93,7 +93,7 @@ Explore the plugin interface and features below.
 
 ## Installation
 
-1. Download [Kashida Image Optimizer v5.1.35](https://github.com/mrwan-bg/kashida-image-optimizer/raw/refs/heads/main/release-downloads/kashida-image-optimizer-v5.1.35.zip).
+1. Download [Kashida Image Optimizer v5.1.35](https://github.com/mrwan-bg/kashida-image-optimizer/releases).
 2. Log in to your WordPress dashboard.
 3. Navigate to **Plugins → Add New Plugin**.
 4. Click **Upload Plugin**.
@@ -192,7 +192,7 @@ Before submitting an issue, include your WordPress version, PHP version, image-p
 
 ## Releases
 
-Download [Kashida Image Optimizer v5.1.35](https://github.com/mrwan-bg/kashida-image-optimizer/raw/refs/heads/main/release-downloads/kashida-image-optimizer-v5.1.35.zip). Older published releases remain available from [GitHub Releases](https://github.com/mrwan-bg/kashida-image-optimizer/releases).
+Download available ZIP packages from [GitHub Releases](https://github.com/mrwan-bg/kashida-image-optimizer/releases). The v5.1.35 package still needs to be attached to its GitHub release.
 
 **Current documented version:** `5.1.35`
 
