@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/mrwan-bg/kashida-image-optimizer/releases">
-    <img src="https://img.shields.io/github/v/release/mrwan-bg/kashida-image-optimizer?label=Latest%20Release&color=F15B40" alt="Latest Release">
+    <img src="https://img.shields.io/badge/Version-5.1.35-F15B40" alt="Latest Release">
   </a>
   <img src="https://img.shields.io/badge/WordPress-5.5%2B-21759B?logo=wordpress&logoColor=white" alt="WordPress 5.5+">
   <img src="https://img.shields.io/badge/PHP-8.0%2B-777BB4?logo=php&logoColor=white" alt="PHP 8.0+">
@@ -26,8 +26,8 @@ Kashida Image Optimizer is a lightweight WordPress image optimization plugin tha
 Optimize new uploads automatically or process your existing Media Library with batch conversion, re-optimization, and cleanup tools. Fine-tune WebP and AVIF quality settings, use Smart PNG Handling and Smart Content Detection, and choose the best optimized format for faster image delivery.
 
 <p align="center">
-  <a href="https://github.com/mrwan-bg/kashida-image-optimizer/releases">
-    <strong>Download Plugin</strong>
+  <a href="https://github.com/mrwan-bg/kashida-image-optimizer/raw/refs/heads/main/release-downloads/kashida-image-optimizer-v5.1.35.zip">
+    <strong>Download Plugin v5.1.35</strong>
   </a>
   &nbsp; • &nbsp;
   <a href="https://github.com/mrwan-bg/kashida-image-optimizer/issues">
@@ -50,13 +50,15 @@ Optimize new uploads automatically or process your existing Media Library with b
 - **Separate Quality Controls** — Configure WebP and AVIF quality independently.
 - **Quality Presets** — Select optimization settings for different needs.
 - **Batch Conversion** — Process existing images in the WordPress Media Library.
+- **Resumable Batch Processing** — Resume interrupted batches from the last saved checkpoint when the same browser and site are used.
+- **Server-Block Diagnostics** — Show guidance for HTTP 403 and related request failures without repeatedly retrying blocked requests.
 - **Re-optimization** — Re-process images using updated settings.
 - **Media Library Integration** — View optimization status and access quick actions.
 - **Original File Preservation** — Keep original images untouched.
 - **Large Image Protection** — Reduce resource pressure when processing large images.
 - **Orphan File Cleanup** — Clean up eligible leftover optimization files.
 - **Local Processing** — Process images on your WordPress server without external optimization services.
-- **Translation Support** — Translation-ready with `.po` and `.mo` files.
+- **Translation Support** — Includes Arabic `.po` and `.mo` files and a `.pot` template for preparing additional languages.
 - **Multilingual Compatibility** — Supports multilingual workflows, including Polylang.
 
 ## Screenshots
@@ -91,7 +93,7 @@ Explore the plugin interface and features below.
 
 ## Installation
 
-1. Download the plugin ZIP package from [GitHub Releases](https://github.com/mrwan-bg/kashida-image-optimizer/releases).
+1. Download [Kashida Image Optimizer v5.1.35](https://github.com/mrwan-bg/kashida-image-optimizer/raw/refs/heads/main/release-downloads/kashida-image-optimizer-v5.1.35.zip).
 2. Log in to your WordPress dashboard.
 3. Navigate to **Plugins → Add New Plugin**.
 4. Click **Upload Plugin**.
@@ -139,7 +141,7 @@ For current WordPress environment recommendations, see the [official WordPress r
 | Property | Details |
 |---|---|
 | Plugin Name | Kashida Image Optimizer |
-| Current Version | 5.1.27 |
+| Current Version | 5.1.35 |
 | Requires WordPress | 5.5 or later |
 | Tested up to | WordPress 7.1 |
 | Requires PHP | 8.0 or later |
@@ -190,9 +192,9 @@ Before submitting an issue, include your WordPress version, PHP version, image-p
 
 ## Releases
 
-Download available versions from [GitHub Releases](https://github.com/mrwan-bg/kashida-image-optimizer/releases).
+Download [Kashida Image Optimizer v5.1.35](https://github.com/mrwan-bg/kashida-image-optimizer/raw/refs/heads/main/release-downloads/kashida-image-optimizer-v5.1.35.zip). Older published releases remain available from [GitHub Releases](https://github.com/mrwan-bg/kashida-image-optimizer/releases).
 
-**Current documented version:** `5.1.27`
+**Current documented version:** `5.1.35`
 
 ---
 
