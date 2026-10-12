@@ -192,7 +192,7 @@ Before submitting an issue, include your WordPress version, PHP version, image-p
 
 ## Releases
 
-Download available ZIP packages from [GitHub Releases](https://github.com/mrwan-bg/kashida-image-optimizer/releases). The v5.1.35 package still needs to be attached to its GitHub release.
+Download available ZIP packages from [GitHub Releases](https://github.com/mrwan-bg/kashida-image-optimizer/releases).
 
 **Current documented version:** `5.1.35`
 
