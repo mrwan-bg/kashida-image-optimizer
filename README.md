@@ -26,16 +26,20 @@ Kashida Image Optimizer is a lightweight WordPress image optimization plugin tha
 Optimize new uploads automatically or process your existing Media Library with batch conversion, re-optimization, and cleanup tools. Fine-tune WebP and AVIF quality settings, use Smart PNG Handling and Smart Content Detection, and choose the best optimized format for faster image delivery.
 
 <p align="center">
+  <a href="https://kashida.ly/wp-plugins/kashida-image-optimizer/">
+    <strong>View Plugin on Kashida</strong>
+  </a>
+  &nbsp; • &nbsp;
+  <a href="https://wordpress.org/plugins/kashida-image-optimizer/">
+    <strong>View on WordPress.org</strong>
+  </a>
+  &nbsp; • &nbsp;
   <a href="https://github.com/mrwan-bg/kashida-image-optimizer/releases">
-    <strong>Download Plugin</strong>
+    <strong>Download from GitHub</strong>
   </a>
   &nbsp; • &nbsp;
   <a href="https://github.com/mrwan-bg/kashida-image-optimizer/issues">
     <strong>Report an Issue</strong>
-  </a>
-  &nbsp; • &nbsp;
-  <a href="https://kashida.ly/">
-    <strong>Kashida Media Services</strong>
   </a>
 </p>
 
